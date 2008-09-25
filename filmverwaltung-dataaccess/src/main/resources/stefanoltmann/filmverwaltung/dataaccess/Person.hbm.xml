@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="stefanoltmann.filmverwaltung.dataaccess.Person" table="Person">
+
+		<cache usage="read-write"/>
+
+        <id name="id">
+            <generator class="assigned"/>
+        </id>
+
+		<property name="name"	not-null="true"/>
+		
+		<!-- 	Diese Seite der Many-to-Many-Beziehung funktioniert nicht richtig.
+				Es fehlen irgendwie immer Filme in der Liste.						-->
+		<!-- list name="filme" table="film_person" lazy="true" inverse="true">
+			<key column="person_id"/>
+			<list-index column="cast_index"/>
+			<many-to-many column="film_id" class="stefanoltmann.filmverwaltung.dataaccess.Film"/>
+		</list -->
+
+	</class>
+</hibernate-mapping>

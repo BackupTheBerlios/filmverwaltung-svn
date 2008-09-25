@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="stefanoltmann.filmverwaltung.dataaccess.Filmbewertung" table="Filmbewertung">
+
+		<cache usage="read-write"/>
+
+        <id name="id">
+            <generator class="assigned"/>
+        </id>
+
+		<property name="ofdbId"/>
+		
+		<property name="filmId" column="film_id" not-null="true"/>	
+		
+		<many-to-one name="benutzer" class="stefanoltmann.filmverwaltung.dataaccess.Benutzer" lazy="false"/>
+
+		<property name="imBesitz"/>
+		<property name="punkte"/>
+		<property name="beschreibung" 	length="10485760"/>
+		<property name="kommentar" 		length="10485760"/>
+		<property name="eintragsDatum"/>
+
+	</class>
+</hibernate-mapping>

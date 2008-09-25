@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="stefanoltmann.filmverwaltung.dataaccess.Film" table="Film">
+
+		<cache usage="read-write"/>
+
+        <id name="id">
+            <generator class="assigned"/>
+        </id>
+
+		<property name="ofdbId"/>
+
+		<property name="name"				not-null="true"/>
+		<property name="ofdbName"/>
+		<property name="erscheinungsJahr"/>
+		<property name="ofdbBeschreibung" 	length="10485760"/>
+
+		<many-to-one name="uploader" class="stefanoltmann.filmverwaltung.dataaccess.Benutzer" lazy="false"/>
+		
+		<list name="genres" table="film_genre" lazy="false">
+			<key column="film_id"/>
+			<list-index column="genres_index"/>
+			<many-to-many column="genre_id" class="stefanoltmann.filmverwaltung.dataaccess.Genre"/>
+		</list>
+		
+		<list name="cast" table="film_person" lazy="false">
+			<key column="film_id"/>
+			<list-index column="cast_index"/>
+			<many-to-many column="person_id" class="stefanoltmann.filmverwaltung.dataaccess.Person"/>
+		</list>
+
+	</class>
+</hibernate-mapping>

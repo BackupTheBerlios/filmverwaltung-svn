@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+        		<prop key="hibernate.connection.pool_size">			1									</prop>
+        		<prop key="hibernate.connection.driver_class">		${db.driverClassName}				</prop>
+        		<prop key="hibernate.dialect">						${db.dialect}						</prop>
+        		<prop key="hibernate.connection.url">				${db.url}							</prop>
+        		<prop key="hibernate.connection.user">				${db.userName}						</prop>
+        		<prop key="hibernate.connection.password">			${db.password}						</prop>
+        		<prop key="hibernate.hbm2ddl.auto">					${db.hbm2ddl}						</prop>
+        		<prop key="hibernate.show_sql">						false								</prop>
+    			<prop key="hibernate.cache.provider_class">			org.hibernate.cache.EhCacheProvider	</prop>
+    			<prop key="hibernate.cache.use_second_level_cache">	true								</prop>
+    			<prop key="hibernate.cache.use_query_cache">		true								</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+	        	<value>stefanoltmann/filmverwaltung/dataaccess/Film.hbm.xml</value>
+	        	<value>stefanoltmann/filmverwaltung/dataaccess/Filmbewertung.hbm.xml</value>
+	        	<value>stefanoltmann/filmverwaltung/dataaccess/Genre.hbm.xml</value>
+	        	<value>stefanoltmann/filmverwaltung/dataaccess/Person.hbm.xml</value>
+	        	<value>stefanoltmann/filmverwaltung/dataaccess/Benutzer.hbm.xml</value>
+			</list>
+		</property>
+		<property name="exposeTransactionAwareSessionFactory" value="false"/>
+	</bean>
+	
+	<!-- Service Definitionen -->
+	
+	<bean id="filmverwaltungService" 	class="stefanoltmann.filmverwaltung.dataaccess.FilmverwaltungService" 	autowire="constructor"/>
+	<bean id="filmDao" 					class="stefanoltmann.filmverwaltung.dataaccess.FilmDao" 				autowire="byName"/>
+	<bean id="filmbewertungDao"			class="stefanoltmann.filmverwaltung.dataaccess.FilmbewertungDao"		autowire="byName"/>
+	<bean id="genreDao" 				class="stefanoltmann.filmverwaltung.dataaccess.GenreDao" 				autowire="byName"/>
+	<bean id="personDao" 				class="stefanoltmann.filmverwaltung.dataaccess.PersonDao" 				autowire="byName"/>
+	<bean id="benutzerDao"				class="stefanoltmann.filmverwaltung.dataaccess.BenutzerDao"				autowire="byName"/>
+	
+</beans>
