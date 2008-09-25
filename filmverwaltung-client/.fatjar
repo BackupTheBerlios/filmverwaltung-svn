@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Sun Sep 21 22:57:40 CEST 2008
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=filmverwaltung-0.7.2.jar
+manifest.mergeall=true
+manifest.mainclass=stefanoltmann.filmverwaltung.client.app.Main
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=

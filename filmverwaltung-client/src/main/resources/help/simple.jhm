@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='ISO-8859-1'  ?>
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 1.0//EN" "http://java.sun.com/products/javahelp/map_1_0.dtd">
+<map version="1.0">
+
+
+<!-- Images -->
+
+
+<!-- Topics -->
+
+   <mapID target="Übersicht" url="HTML/overview.htm"/>
+   <mapID target="Technik" url="HTML/technik.htm"/>
+   <mapID target="Was ist die OFDB?" url="HTML/ofdb.htm"/>
+   <mapID target="Was ist das OFDB GW?" url="HTML/ofdbgw.htm"/>
+
+<!-- Index Bookmarks -->
+
+
+</map>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry excluding="**/*.java" kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry excluding="**/*.java" kind="src" output="target/test-classes" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-core-1.0.0.jar" sourcepath="lib/spring-richclient-core-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-binding-1.0.0.jar" sourcepath="lib/spring-richclient-binding-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-resources-1.0.0.jar" sourcepath="lib/spring-richclient-resources-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-support-1.0.0.jar" sourcepath="lib/spring-richclient-support-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-form-1.0.0.jar" sourcepath="lib/spring-richclient-form-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-sandbox-1.0.0.jar" sourcepath="lib/spring-richclient-sandbox-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/glazedlists_java15-1.7.0.jar" sourcepath="lib/glazedlists_java15-1.7.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/forms-1.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/looks-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/jhelp-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-1.0.10.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.0.2-FINAL.jar"/>
+	<classpathentry kind="lib" path="lib/poi-scratchpad-3.0.2-FINAL.jar"/>
+	<classpathentry kind="lib" path="lib/spring-binding-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/glazedlists_java15-1.7.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-beans-2.5.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-2.5.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-2.5.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-2.5.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-binding-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-core-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-form-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-resources-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-sandbox-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/spring-richclient-support-1.0.0-sources.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/filmverwaltung-dataaccess"/>
+	<classpathentry kind="lib" path="/progz/eclipse/plugins/org.apache.axis_1.4.0.v200806030120/lib/axis.jar"/>
+	<classpathentry kind="lib" path="/progz/eclipse/plugins/org.apache.commons.discovery_0.2.0.v200806030120/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="/progz/eclipse/plugins/javax.xml.rpc_1.1.0.v200806030420/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="/progz/eclipse/plugins/javax.xml.soap_1.2.0.v200806030421/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="/progz/eclipse/plugins/javax.wsdl_1.5.1.v200806030408.jar"/>
+	<classpathentry kind="lib" path="/progz/eclipse/plugins/org.apache.commons.logging_1.0.4.v20080605-1930.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

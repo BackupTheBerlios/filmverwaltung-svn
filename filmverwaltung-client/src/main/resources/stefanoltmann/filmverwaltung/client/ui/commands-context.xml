@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+  <!-- 
+    Bean: windowCommandManager
+    Type: magic
+    Usage: required
+    Description: This specifies the component that will manage the commands
+    associated with a window.  You can specify the ids of commands that
+    are "shared" among views.  This indicates to the manager that they
+    will have different target executors in each view.
+  -->
+  <bean id="windowCommandManager"
+    class="org.springframework.richclient.application.support.ApplicationWindowCommandManager">
+    <property name="sharedCommandIds">
+      <list>
+        <value>newCommand</value>
+        <value>propertiesCommand</value>
+        <value>deleteCommand</value>
+        <value>exportFilmeCommand</value>
+        <value>ofdbExportCommand</value>
+        <value>syncCommand</value>
+        <value>exportPunkteVerteilungsDiagrammCommand</value>
+      </list>
+    </property>
+  </bean>
+
+  <!-- 
+    Bean: menuBar
+    Type: magic
+    Usage: required
+    Description: This specifies the makeup of the main menu bar for the application.
+    The CommandGroupFactoryBean is a factory that generates command groups.
+    The "members" property is used to specify the top level menus in the
+    menu bar.
+  -->
+  <bean id="menuBar" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+        <ref bean="fileMenu" />
+        <bean class="org.springframework.richclient.command.support.ShowViewMenu" />
+		<ref bean="settingsMenu" />
+		<ref bean="webserviceMenu" />
+        <ref bean="helpMenu" />
+      </list>
+    </property>
+  </bean>
+
+  <!-- 
+    Bean: toolBar
+    Type: magic
+    Usage: required
+    Description: This specifies the makeup of the toolbar for the application.
+    The CommandGroupFactoryBean is a factory that generates command groups.
+    The "members" property is used to specify the commands to place on the
+    toolbar.  Note that you can place command groups (menus) in the toolbar
+    as well and they will be rendered as a button that creates a drop down
+    menu when pressed.
+  -->
+  <bean id="toolBar" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+        <value>newCommand</value>
+        <value>deleteCommand</value>
+        <value>propertiesCommand</value>
+        <value>exportFilmeCommand</value>
+        <value>ofdbExportCommand</value>
+        <value>syncCommand</value>
+        <value>exportPunkteVerteilungsDiagrammCommand</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="fileMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+        <ref bean="newMenu" />
+        <value>propertiesCommand</value>
+        <value>deleteCommand</value>
+        <value>exportFilmeCommand</value>
+		<value>ofdbExportCommand</value>
+        <value>syncCommand</value>
+        <value>exportPunkteVerteilungsDiagrammCommand</value>
+        <value>separator</value>
+        <bean class="org.springframework.richclient.command.support.ExitCommand" />
+      </list>
+    </property>
+  </bean>
+
+  <bean id="newMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+        <value>newFilmCommand</value>
+        <value>newGenreCommand</value>
+        <value>newPersonCommand</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="settingsMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+        <bean id="showFilmTablePunkteColumnToggle" class="stefanoltmann.filmverwaltung.client.ui.filme.ShowFilmTablePunkteColumnToggle">
+			<constructor-arg index="0" ref="einstellungen"/>
+      		<property name="selected" value="true"/>
+      	</bean>
+      	<bean id="showFilmTableImBesitzColumnToggle" class="stefanoltmann.filmverwaltung.client.ui.filme.ShowFilmTableImBesitzColumnToggle">
+			<constructor-arg index="0" ref="einstellungen"/>
+      		<property name="selected" value="true"/>
+      	</bean>
+		<bean id="showFilmTableErscheinungsJahrColumnToggle" class="stefanoltmann.filmverwaltung.client.ui.filme.ShowFilmTableErscheinungsJahrColumnToggle">
+			<constructor-arg index="0" ref="einstellungen"/>
+      		<property name="selected" value="false"/>
+      	</bean>
+        <value>separator</value>
+      	<bean id="showPunkteProgressBarToggleCommand" class="stefanoltmann.filmverwaltung.client.ui.filme.ShowPunkteProgressBarToggleCommand">
+			<constructor-arg index="0" ref="einstellungen"/>
+      		<property name="selected" value="true"/>
+      	</bean>
+      	<value>separator</value>
+      	<bean id="cleanGenresCommand" class="stefanoltmann.filmverwaltung.client.ui.genres.CleanGenresCommand">
+			<constructor-arg index="0" ref="filmverwaltungService"/>
+      	</bean>
+      	<bean id="cleanPersonenCommand" class="stefanoltmann.filmverwaltung.client.ui.personen.CleanPersonenCommand">
+			<constructor-arg index="0" ref="filmverwaltungService"/>
+      	</bean>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="webserviceMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+      	<ref bean="editBenutzerCommand" />
+        <ref bean="sendFilmeCommand" />
+        <ref bean="downloadFilmeCommand"/>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="helpMenu" class="org.springframework.richclient.command.CommandGroupFactoryBean">
+    <property name="members">
+      <list>
+        <ref bean="helpContentsCommand" />
+        <value>separator</value>
+        <ref bean="aboutCommand" />
+      </list>
+    </property>
+  </bean>
+
+  <bean id="helpContentsCommand" class="org.springframework.richclient.command.support.HelpContentsCommand">
+    <property name="helpSetPath" value="help/simple.hs" />
+  </bean>
+
+  <!-- 
+    Bean: aboutCommand
+    Type: user named
+    Usage: optional
+    Description: This creates a command to handle the "about" menu item.  It uses
+    a platform class to generate an about box from the configured application
+    data in the application context.
+  -->
+  <bean id="aboutCommand" class="org.springframework.richclient.command.support.AboutCommand" />
+
+  <bean id="newFilmCommand" class="stefanoltmann.filmverwaltung.client.ui.filme.NewFilmCommand">
+	<constructor-arg index="0" ref="filmverwaltungService" />
+  </bean>
+
+  <bean id="newGenreCommand" class="stefanoltmann.filmverwaltung.client.ui.genres.NewGenreCommand">
+	<constructor-arg index="0" ref="filmverwaltungService" />
+  </bean>
+    
+  <bean id="newPersonCommand" class="stefanoltmann.filmverwaltung.client.ui.personen.NewPersonCommand">
+	<constructor-arg index="0" ref="filmverwaltungService" />
+  </bean>
+  
+  <bean id="sendFilmeCommand" class="stefanoltmann.filmverwaltung.client.ui.filme.SendFilmeCommand">
+	<constructor-arg index="0" ref="filmverwaltungWebclient" />
+  </bean>
+  
+  <bean id="downloadFilmeCommand" class="stefanoltmann.filmverwaltung.client.ui.filme.DownloadFilmeCommand">
+	<constructor-arg index="0" ref="filmverwaltungWebclient" />
+  </bean>
+  
+  <bean id="editBenutzerCommand" class="stefanoltmann.filmverwaltung.client.ui.benutzer.EditBenutzerCommand">
+	<constructor-arg index="0" ref="filmverwaltungService" />
+	<constructor-arg index="1" ref="filmverwaltungWebclient" />
+  </bean>
+
+</beans>

@@ -1,0 +1,27 @@
+#Wed Sep 24 23:06:39 CEST 2008
+eclipse.preferences.version=1
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/FilmverwaltungWebservice.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/FilmverwaltungWebserviceImplService.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/FilmverwaltungWebserviceImplServiceLocator.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/FilmverwaltungWebserviceImplServiceSoapBindingStub.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetAllFilme.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetBenutzer.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetBenutzerResponse.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetBewertung.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetBewertungResponse.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetCurrentSoftwareVersionNumber.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetCurrentSoftwareVersionNumberResponse.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetFilm.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetFilme.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetSoftwareDownloadLink.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/GetSoftwareDownloadLinkResponse.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/IsFilmInDatabase.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/IsFilmInDatabaseResponse.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/RegistriereNutzer.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/RegistriereNutzerResponse.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/ReportError.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/ReportErrorResponse.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/SendBewertung.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/SendBewertungResponse.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/SendFilm.java=UTF-8
+encoding//src/main/java/stefanoltmann/filmverwaltung/webservice/SendFilmResponse.java=UTF-8

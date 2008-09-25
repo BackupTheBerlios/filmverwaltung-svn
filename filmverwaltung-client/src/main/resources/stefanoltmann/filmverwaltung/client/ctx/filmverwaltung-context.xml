@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+  
+  <bean id="einstellungen" class="stefanoltmann.filmverwaltung.client.app.Einstellungen" />
+  
+  <bean id="filmeView" class="stefanoltmann.filmverwaltung.client.ui.filme.FilmeViewDescriptor" scope="singleton">
+    <constructor-arg index="0" ref="filmverwaltungService" />
+    <constructor-arg index="1" ref="einstellungen" />
+  </bean>
+  
+  <bean id="genresView" class="org.springframework.richclient.application.support.DefaultViewDescriptor" scope="singleton">
+    <property name="viewClass" value="stefanoltmann.filmverwaltung.client.ui.genres.GenresView" />
+    <property name="viewProperties">
+      <map>
+        <entry key="filmverwaltungService" value-ref="filmverwaltungService" />
+      </map>
+    </property>
+  </bean>
+  
+  <bean id="personenView" class="org.springframework.richclient.application.support.DefaultViewDescriptor" scope="singleton">
+    <property name="viewClass" value="stefanoltmann.filmverwaltung.client.ui.personen.PersonenView" />
+    <property name="viewProperties">
+      <map>
+        <entry key="filmverwaltungService" value-ref="filmverwaltungService" />
+      </map>
+    </property>
+  </bean>
+  
+  <bean id="filmverwaltungWebclient" class="stefanoltmann.filmverwaltung.webclient.FilmverwaltungWebclient" scope="singleton">
+	<constructor-arg index="0" ref="filmverwaltungService" />
+  </bean>
+  
+</beans>
