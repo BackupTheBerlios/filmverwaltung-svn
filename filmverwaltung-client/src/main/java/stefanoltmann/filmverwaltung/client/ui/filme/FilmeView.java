@@ -86,7 +86,7 @@ public class FilmeView extends AbstractView implements ApplicationListener {
 		filmeTable = new FilmTableFactory().erstelleFilmTable();
 
 		JPanel view = new JPanel(new BorderLayout());
-		JScrollPane sp = getComponentFactory().createScrollPane(filmeTable.getControl());
+		JScrollPane sp = new JScrollPane(filmeTable.getControl());
 		view.add(filterPanel, BorderLayout.NORTH);
 		view.add(sp, BorderLayout.CENTER);
 		return view;
