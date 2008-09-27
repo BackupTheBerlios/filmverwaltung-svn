@@ -19,17 +19,16 @@ public class BenutzerDao extends HibernateDao {
 	 */
 	@SuppressWarnings("unchecked")
 	public Benutzer find() {
-		logger.info("find einzigen Benutzer");
+		logger.info("find lokalen Benutzer");
 		try {
 			openSession();
-			
-			List<Benutzer> benutzer = (List<Benutzer>)getSession().createQuery("FROM Benutzer").list();
+			List<Benutzer> benutzer = (List<Benutzer>)getSession().createQuery("FROM Benutzer WHERE lokal = true").list();
 			if (benutzer.size() > 0)
 				return benutzer.get(0);
 			else
 				return null;
 		} catch (HibernateException e) {
-			logger.error("find Benutzer failed", e);
+			logger.error("find lokalen Benutzer failed", e);
 			return null;
 		} finally {
 			closeSession();
