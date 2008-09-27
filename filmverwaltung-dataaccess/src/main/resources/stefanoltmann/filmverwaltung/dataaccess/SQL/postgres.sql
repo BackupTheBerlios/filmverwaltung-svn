@@ -54,7 +54,8 @@ CREATE TABLE benutzer (
     passwort character varying(255) NOT NULL,
     anmeldedatum timestamp without time zone,
     letzterzugriff timestamp without time zone,
-    programmversion integer
+    programmversion integer,
+    lokal boolean
 ) WITHOUT OIDS;
 
 

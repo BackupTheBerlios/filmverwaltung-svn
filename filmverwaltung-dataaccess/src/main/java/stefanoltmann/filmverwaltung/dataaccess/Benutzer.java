@@ -14,6 +14,7 @@ public class Benutzer {
 	private Date anmeldeDatum = new Date();
 	private Date letzterZugriff = new Date();
 	private Integer programmVersion;
+	private boolean lokal; // Ist dies der lokale Nutzer oder einer vom Server?
 
 	public Benutzer() {}
 	
@@ -70,6 +71,14 @@ public class Benutzer {
 		this.programmVersion = programmVersion;
 	}
 	
+	public boolean isLokal() {
+		return lokal;
+	}
+
+	public void setLokal(boolean lokal) {
+		this.lokal = lokal;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Benutzer) {
