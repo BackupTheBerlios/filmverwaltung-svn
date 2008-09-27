@@ -64,6 +64,38 @@ public class FilmbewertungDao extends HibernateDao {
 		return bewertungen;
 	}
 	
+	public void updateBenutzerWhereNULL(Benutzer benutzer) {
+		
+		if (benutzer == null)
+			throw new IllegalArgumentException("Parameter 'benutzer' darf nicht NULL sein.");
+		
+		if (benutzer.getId() == null)
+			throw new IllegalArgumentException("Parameter 'benutzer.ID' darf nicht NULL sein.");
+		
+		if (benutzer.getId().length() == 0)
+			throw new IllegalArgumentException("Parameter 'benutzer' muss eine ID haben.");
+		
+		if (!benutzer.isLokal())
+			throw new IllegalStateException("Diese Zuordnung darf nur mit lokalen Benutzern erfolgen.");
+		
+		logger.info("update Filmbewertung.benutzer Where NULL " + benutzer.getId());
+		try {
+		
+			openSession();
+
+			getSession().createQuery("UPDATE Filmbewertung as filmbewertung SET benutzer = :benutzer WHERE benutzer = NULL")
+						.setParameter("benutzer", benutzer)
+						.executeUpdate();
+			
+		} catch (HibernateException e) {
+			logger.error("update Filmbewertung.benutzer Where NULL failed", e);
+			throw e;
+		} finally {
+			closeSession();
+		}
+		
+	}
+	
 	public void saveOrUpdate(Filmbewertung filmbewertung) {
 		
 		if (filmbewertung == null)

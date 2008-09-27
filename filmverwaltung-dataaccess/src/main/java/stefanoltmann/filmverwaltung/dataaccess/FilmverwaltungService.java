@@ -99,6 +99,10 @@ public class FilmverwaltungService {
 		return filmbewertungDao.findAll(filmId, benutzer);
 	}
 	
+	public void updateBenutzerWhereNULL(Benutzer benutzer) {
+		filmbewertungDao.updateBenutzerWhereNULL(benutzer);
+	}
+	
 	public void saveFilmbewertung(Filmbewertung filmbewertung) {
 		filmbewertungDao.saveOrUpdate(filmbewertung);
 	}

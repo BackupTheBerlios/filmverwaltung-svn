@@ -92,7 +92,7 @@ public class Benutzer {
 
 	@Override
 	public String toString() {
-		return "<" + id + ">" + anmeldename;
+		return anmeldename;
 	}
 	
 	public boolean isValid() {

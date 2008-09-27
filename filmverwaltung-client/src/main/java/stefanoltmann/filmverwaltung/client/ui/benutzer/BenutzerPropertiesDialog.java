@@ -26,6 +26,7 @@ public class BenutzerPropertiesDialog extends TitledPageApplicationDialog {
 		boolean neuerBenutzer = false;
 		if (benutzer == null) {
 			benutzer = new Benutzer();
+			benutzer.setLokal(true);
 			neuerBenutzer = true;
 		}
 		
@@ -56,6 +57,7 @@ public class BenutzerPropertiesDialog extends TitledPageApplicationDialog {
 			// Nutzer existiert online bereits und Daten sind gültig
 			if (filmverwaltungWebclient.getBenutzer(benutzer.getAnmeldename(), benutzer.getPasswort()) != null) {
 				filmverwaltungService.saveBenutzer(benutzer);
+				filmverwaltungService.updateBenutzerWhereNULL(benutzer);
 				return true;
 			} else {
 				
@@ -63,6 +65,7 @@ public class BenutzerPropertiesDialog extends TitledPageApplicationDialog {
 				
 				if (neuerBenutzer != null) {
 					filmverwaltungService.saveBenutzer(neuerBenutzer);
+					filmverwaltungService.updateBenutzerWhereNULL(neuerBenutzer);
 					return true;
 				} else {
 					setDescription(getMessage("benutzerProperties.message.error.cannotRegister"));
