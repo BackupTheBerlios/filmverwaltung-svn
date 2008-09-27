@@ -40,10 +40,23 @@ public class FilmverwaltungService {
 		List<Film> filme = filmDao.findAll();
 		
 		// Jeder Film braucht eine Filmbewertung Property
+		Benutzer benutzer = findBenutzer();
 		for (Film film : filme) {
-			List<Filmbewertung> bewertungen = findAllFilmbewertungen(film.getId());
+			
+			List<Filmbewertung> bewertungen;
+			
+			// Wenn Benutzer NULL ist kann es nur eine geben, da keine Verbindung
+			// mit dem WebService besteht. Ansonsten wählen wir genau die zum lokalen
+			// Nutzer passende aus. Irgendein Bewertung müssen wir auf der Film-Gesamts-Seite
+			// anzeigen, sonst verliert das ganze Programm so ein wenig seinen Sinn.
+			if (benutzer == null)
+				bewertungen = findAllFilmbewertungen(film.getId());
+			else
+				bewertungen = findAllFilmbewertungen(film.getId(), benutzer);
 			if (bewertungen.size() > 0)
 				film.setBewertung(bewertungen.get(0));
+			else
+				throw new IllegalStateException("Keine Bewertung für " + film.getId() + " gefunden.");
 		}
 		
 		return filme;
