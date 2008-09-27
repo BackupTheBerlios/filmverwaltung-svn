@@ -15,10 +15,13 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
 import org.springframework.binding.value.support.ListListModel;
+import org.springframework.richclient.command.GuardedActionCommandExecutor;
+import org.springframework.richclient.command.support.AbstractActionCommandExecutor;
 import org.springframework.richclient.form.AbstractForm;
 import org.springframework.richclient.form.FormModelHelper;
 import org.springframework.richclient.form.binding.BindingFactory;
@@ -26,8 +29,8 @@ import org.springframework.richclient.form.binding.swing.SwingBindingFactory;
 import org.springframework.richclient.form.builder.TableFormBuilder;
 import org.springframework.richclient.layout.TableLayoutBuilder;
 
-import stefanoltmann.filmverwaltung.client.ui.CustomSlider;
-import stefanoltmann.filmverwaltung.client.ui.CustomSliderBinding;
+import stefanoltmann.filmverwaltung.client.ui.filmbewertung.FilmbewertungPropertiesDialog;
+import stefanoltmann.filmverwaltung.client.ui.filmbewertung.FilmbewertungenTable;
 import stefanoltmann.filmverwaltung.dataaccess.Film;
 import stefanoltmann.filmverwaltung.dataaccess.FilmverwaltungService;
 import stefanoltmann.filmverwaltung.dataaccess.Genre;
@@ -38,13 +41,16 @@ import stefanoltmann.filmverwaltung.dataaccess.Person;
  */
 public class FilmForm extends AbstractForm {
 
-	private FilmverwaltungService filmverwaltungService;
+	private FilmverwaltungService service;
+	
+	private FilmbewertungenTable filmbewertungenTable;
+	private GuardedActionCommandExecutor filmbewertungPropertiesCommandExecutor = new FilmbewertungPropertiesCommandExecutor();
 	
 	public FilmForm(FilmverwaltungService filmverwaltungService, Film formObject) {
 		super(FormModelHelper.createFormModel(formObject, true));
 		setId("film");
-		
-		this.filmverwaltungService = filmverwaltungService;
+
+		this.service = filmverwaltungService;
 	}
 	
 	@Override
@@ -76,18 +82,12 @@ public class FilmForm extends AbstractForm {
 		formBuilder.add("erscheinungsJahr");
 		formBuilder.row();
 		
-		formBuilder.add("bewertung.imBesitz");
-		formBuilder.row();
-		
-		formBuilder.add("bewertung.eintragsDatum");
-		formBuilder.row();
-		
 		formBuilder.addSeparator("Genres", "colSpan=2");
 		formBuilder.addSeparator("Schauspieler", "colSpan=2");
 		formBuilder.row();
 		
-		formBuilder.getLayoutBuilder().cell(createAddGenreControl(filmverwaltungService.findAllGenres(), film.getGenres()), "colSpan=2");
-		formBuilder.getLayoutBuilder().cell(createAddPersonControl(filmverwaltungService.findAllPersonen(), film.getCast()), "colSpan=2");
+		formBuilder.getLayoutBuilder().cell(createAddGenreControl(service.findAllGenres(), film.getGenres()), "colSpan=2");
+		formBuilder.getLayoutBuilder().cell(createAddPersonControl(service.findAllPersonen(), film.getCast()), "colSpan=2");
 		formBuilder.row();
 		
 		formBuilder.addSeparator("Beschreibungen");
@@ -95,31 +95,40 @@ public class FilmForm extends AbstractForm {
 		
 		addTextArea(formBuilder, bindingFactory, "ofdbBeschreibung");
 		formBuilder.row();
-		
-		addTextArea(formBuilder, bindingFactory, "bewertung.beschreibung");
+
+		formBuilder.addSeparator("Bewertungen");
 		formBuilder.row();
 		
-		formBuilder.addSeparator("Bewertung");
-		formBuilder.row();		
+		filmbewertungenTable = new FilmbewertungenTable(service, (Film)getFormObject());
+		filmbewertungenTable.setDoubleClickHandler(filmbewertungPropertiesCommandExecutor);
+		JTable table = (JTable)filmbewertungenTable.getControl();
+		table.setPreferredScrollableViewportSize(new Dimension(300, 80));
 		
-		formBuilder.add(new CustomSliderBinding(new CustomSlider(), getFormModel(), "bewertung.punkte"));
-		formBuilder.row();
-		
-		addTextArea(formBuilder, bindingFactory, "bewertung.kommentar");
+		formBuilder.getLayoutBuilder().cell(new JScrollPane(table));
 		
 		// Felder die nicht editierbar sein sollen
 		// getFormModel().getFieldMetadata("ofdbId").setReadOnly(true);
 		getFormModel().getFieldMetadata("ofdbName").setReadOnly(true);
 		getFormModel().getFieldMetadata("ofdbBeschreibung").setReadOnly(true);
-		
+				
 		return formBuilder.getForm();
+	}
+	
+	private class FilmbewertungPropertiesCommandExecutor extends AbstractActionCommandExecutor {
+		public FilmbewertungPropertiesCommandExecutor() {
+			setEnabled(true);
+		}
+		public void execute() {
+			System.out.println("Habe verstandne");
+			new FilmbewertungPropertiesDialog(service, filmbewertungenTable.getSelectedFilmbewertung()).showDialog();			
+		}
 	}
 	
 	/**
 	 * Die Original-Methode formBuilder.addTextArea ist offenbar irgendwie buggy... deshalb dieser Weg.
 	 * Das hier sollte nicht mit gutem Code verwechselt werden.
 	 */
-    public void addTextArea(TableFormBuilder tableFormBuilder, BindingFactory bindingFactory, String fieldName) {
+    private void addTextArea(TableFormBuilder tableFormBuilder, BindingFactory bindingFactory, String fieldName) {
         JTextArea textArea = new JTextArea();
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
