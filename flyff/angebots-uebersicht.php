@@ -6,7 +6,7 @@
 
 	<body>
 	
-	<h1>Angebots-Uebersicht</h1>
+	<h1>Angebote</h1>
 	
 	<?php
 		include("navigation.php");
