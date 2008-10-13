@@ -19,7 +19,7 @@
 	
 	       $serverId = $_GET['serverId'];
 	
-			if (!isset($serverId)) {
+			// if (!isset($serverId)) {
 	?>
 	
 	 Sie müssen schon einen Server auswählen.<br>
@@ -30,7 +30,7 @@
 				
 		<?php		
 				
-			} else {
+		//	} else {
 				
 					?>
 					
@@ -116,7 +116,7 @@
 	
 	
 					<?php
-					 }
+					// }
 				?>
 	
 	</body>
