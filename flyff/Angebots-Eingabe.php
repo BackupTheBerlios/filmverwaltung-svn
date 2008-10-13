@@ -52,20 +52,21 @@
 		
 		
 //Verarbeitung der Formular-Eingabe
-		if (isset($_POST['Item_name'], $_POST['Preis'], $_POST['Beschreibung'], $_POST['uprade_lvl'], $_POST['Item_typ_id'], $_POST['avatar_id'])) {
+		if (isset($_POST['Item_name'], $_POST['Preis'], $_POST['upgrade_lvl'], $_POST['Item_typ_id'], $_POST['avatar_id'])) {
 		$Item_name=$_POST['Item_name'];
 		$Preis=$_POST['Preis'];
-		$Beschreibungl=$_POST['Beschreibung'];
-		$uprade_lvl=$_POST['uprade_lvl'];
+		$Beschreibung=$_POST['Beschreibung'];
+		$uprade_lvl=$_POST['upgrade_lvl'];
 		$item_typ_id=$_POST['Item_typ_id'];
 		$avatar_id=$_POST['avatar_id'];
 		
+				
+		$sql = "INSERT INTO angebot ( Item_name , Preis , Beschreibung, upgrade_lvl, Item_typ_id, avatar_id) VALUES ( '$Item_name', '$Preis', '$Beschreibung', '$uprade_lvl', '$item_typ_id', '$avatar_id');";
 		
-		$sql = "INSERT INTO angebot ( Item_name , Preis , Beschreibung, uprade_lvl, Item_typ_id, avatar_id) VALUES ( '$Item_name', '$Preis', '$Beschreibung', '$uprade_lvl', '$item_typ_id', '$avatar_id');";
+		echo $sql;
 		
 		// Antwort der Datenbank in $sql_query speichern
 		mysql_query($sql);		
-		
 			
 	?>
 	<?php
