@@ -1,3 +1,7 @@
+<?php session_start(); ?>
+
+
+
 <html>
 
 <head>
@@ -6,11 +10,17 @@
 
 	<body>
 	
+	
+	
 		<h1>Anmeldung</h1>
 		
+	
+
 		
 		
 	<?php
+	
+	
 		if (isset($_POST['Benutzername'], $_POST['passwort'])) {
 			$Benutzername=$_POST['Benutzername'];
 			$passwort=$_POST['passwort'];
@@ -42,6 +52,9 @@
 				}
 				
 				if ($numrows == 1) {
+					
+					$_SESSION["Benutzername"]=$_POST['Benutzername'];
+					
 					?>
 					Angemeldet als <?=$_POST['Benutzername']?> 
 					
@@ -70,6 +83,11 @@
 		<input type="submit" name="formaction" value="Einloggen" />
     	</fieldset>
 	</form>
+	
+	
+	
+	
+	
 	</body>
 	
 </html>

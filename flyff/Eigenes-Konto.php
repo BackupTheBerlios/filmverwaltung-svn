@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <html>
 
 <head>
@@ -10,6 +12,11 @@
 	
 	<?php
 		include("navigation.php");
+			if(!isset($_SESSION['Benutzername'])){      //Die in IF umwandeln, da besser!!!!!
+			die("bitte einloggen");
+			
+		}
+		
 	?>
 	
 	
