@@ -22,10 +22,10 @@
 
 	<?php
 //Verarbeitung der Formular-Eingabe
-		if (isset($_POST['Benutzername'], $_POST['passwort'], $_POST['email'])) {
+		if (isset($_POST['Benutzername'], $_POST['passwort'])) {
 		$Benutzername=$_POST['Benutzername'];
 		$passwort=$_POST['passwort'];
-		$email=$_POST['email'];
+		
 		$mysqlhost="localhost";    // MySQL-Host angeben
 		$mysqluser="root";    // MySQL-User angeben
 		$mysqlpwd="";		// Passwort angeben
@@ -38,7 +38,7 @@
 		mysql_select_db($mysqldb, $connection);
 		
 		// SQL: Item-name, Preis und Upgrade-Level von Tabelle Angebot abfragen
-		$sql = "INSERT INTO account ( loginname , passwort , email ) VALUES ('$Benutzername', '$passwort','$email');";
+		$sql = "INSERT INTO account ( loginname , passwort) VALUES ('$Benutzername', '$passwort');";
 		
 		// Antwort der Datenbank in $sql_query speichern
 		mysql_query($sql);		
@@ -64,7 +64,6 @@
 		<legend>Logindaten eingeben</legend>
 		<label>Benutzername: <input type="text" name="Benutzername" /></label>
 		<label>Password: <input type="text" name="passwort" /></label>
-		<label>Email <input type="text" name="email" /></label>
 		<input type="submit" name="formaction" value="Einloggen" />
     	</fieldset>
 	</form>

@@ -36,7 +36,7 @@
 			mysql_select_db($mysqldb, $connection);
 			
 			// SQL: Item-name, Preis und Upgrade-Level von Tabelle Angebot abfragen
-			$sql = "Select * FROM account where loginname='$Benutzername' and passwort='$passwort'";
+			$sql = "Select * FROM account where loginname='$Benutzername' and  passwort='$passwort'";
 			
 			// Antwort der Datenbank in $sql_query speichern
 			$sql_query = mysql_query($sql);
