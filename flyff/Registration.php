@@ -48,7 +48,7 @@
 			
 	?>
 
-		Registreirt als <?=$_POST['Benutzername']?> 
+		Registriert als <?=$_POST['Benutzername']?> 
 	
 	<?php
 	 }
