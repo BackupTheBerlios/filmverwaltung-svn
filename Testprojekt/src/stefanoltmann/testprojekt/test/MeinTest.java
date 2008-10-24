@@ -1,4 +1,5 @@
-package stefanoltmann.testprojekt;
+package stefanoltmann.testprojekt.test;
+import stefanoltmann.testprojekt.EineKlasse;
 import junit.framework.TestCase;
 
 public class MeinTest extends TestCase {
