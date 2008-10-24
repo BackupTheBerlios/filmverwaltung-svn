@@ -1,4 +1,4 @@
-<project name="Testprojekt" default="packen">
+<project name="Testprojekt" default="all">
 
 <target name="initalisieren" description="Erstellt notwendige Verzeichnisse">
  <mkdir dir="bin"/>
@@ -6,6 +6,7 @@
 	
 <target name="saeubern" description="Räumt erstmal auf">
  <delete dir="bin"/>	
+ <delete dir="docs"/>	
  <delete file="Testprojekt.jar"/>
 </target>
 	
@@ -19,5 +20,11 @@
 <target name="packen" depends="kompilieren" description="Verpackt das Projekt">
  <jar destfile="Testprojekt.jar" manifest="MANIFEST.MF" basedir="bin"/>
 </target>
- 	
+	
+<target name="doku" depends="packen">
+	<javadoc packagenames="stefanoltmann.testprojekt.*" sourcepath="src" destdir="docs" windowtitle="Testprojekt Doku"/>
+</target>
+	
+<target name="all" depends="doku"/>
+	
 </project>

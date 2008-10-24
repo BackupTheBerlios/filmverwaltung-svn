@@ -1,3 +1,4 @@
+package stefanoltmann.testprojekt;
 import junit.framework.TestCase;
 
 public class MeinTest extends TestCase {
