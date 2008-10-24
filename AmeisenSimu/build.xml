@@ -1,0 +1,19 @@
+<project name="AmeisenSimu" default="packen">
+
+<target name="initalisieren" description="Erstellt notwendige Verzeichnisse">
+ <mkdir dir="bin"/>
+</target>
+	
+<target name="saeubern" description="Räumt erstmal auf">
+ <delete dir="bin"/>	
+</target>
+	
+<target name="kompilieren" depends="initalisieren" description="Kompiliert das Projekt">
+ <javac srcdir="src" destdir="bin"/>
+</target>
+	
+<target name="packen" description="Verpackt das Projekt">
+ <jar destfile="AmeisenSimu.jar" manifest="MANIFEST.MF" basedir="bin"/>
+</target>
+ 	
+</project>
