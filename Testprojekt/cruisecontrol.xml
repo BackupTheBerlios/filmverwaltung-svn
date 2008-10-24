@@ -1,0 +1,15 @@
+<cruisecontrol>
+
+	<project name="Testprojekt" buildafterfailed="true">
+	
+		<modificationset quietperiod="10">
+			<svn LocalWorkingCopy="/tmp/meinsource" RepositoryLocation="svn://svn.berlios.de/filmverwaltung/Testprojekt"/>
+		</modificationset>
+		
+		<schedule invertal="1">
+			<ant antworkingdir="." buildfile="build.xml" uselogger="true" usedebug="true" target="all" />
+		</schedule>
+	
+	</project>
+
+</cruisecontrol>
