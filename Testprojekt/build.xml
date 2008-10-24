@@ -38,6 +38,6 @@
 	<jar destfile="Testprojekt.jar" manifest="MANIFEST.MF" basedir="bin"/>
 </target>
 	
-<target name="all" depends="test,doku,packen"/>
+<target name="all" depends="test,packen"/>
 	
 </project>
