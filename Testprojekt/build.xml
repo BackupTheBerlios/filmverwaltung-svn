@@ -1,0 +1,23 @@
+<project name="Testprojekt" default="packen">
+
+<target name="initalisieren" description="Erstellt notwendige Verzeichnisse">
+ <mkdir dir="bin"/>
+</target>
+	
+<target name="saeubern" description="Räumt erstmal auf">
+ <delete dir="bin"/>	
+ <delete file="Testprojekt.jar"/>
+</target>
+	
+<target name="kompilieren" depends="initalisieren" description="Kompiliert das Projekt">
+ <javac srcdir="src" destdir="bin">
+  <classpath location="lib/junit.jar"/>
+  <classpath location="lib/log4j.jar"/>
+ </javac>
+</target>
+	
+<target name="packen" depends="kompilieren" description="Verpackt das Projekt">
+ <jar destfile="Testprojekt.jar" manifest="MANIFEST.MF" basedir="bin"/>
+</target>
+ 	
+</project>
