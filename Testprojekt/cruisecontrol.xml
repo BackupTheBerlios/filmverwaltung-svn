@@ -6,7 +6,7 @@
 			<svn LocalWorkingCopy="/tmp/meinsource" RepositoryLocation="svn://svn.berlios.de/filmverwaltung/Testprojekt"/>
 		</modificationset>
 		
-		<schedule invertal="1">
+		<schedule interval="1">
 			<ant antworkingdir="." buildfile="build.xml" uselogger="true" usedebug="true" target="all" />
 		</schedule>
 	
