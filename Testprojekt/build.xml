@@ -18,12 +18,12 @@
 </target>
 
 <target name="test" depends="kompilieren">
-	<junit>
+	<junit printsummary="yes" haltonfailure="yes" showoutput="yes">
 		<classpath>
 			<pathelement location="lib/junit.jar" />
 			<pathelement location="bin" />
 		</classpath>
-		<formatter type="brief" usefile="false"/>
+		<formatter type="xml"/>
 		<batchtest>
 			<fileset dir="bin" includes="**/*Test.class" />
 		</batchtest>
