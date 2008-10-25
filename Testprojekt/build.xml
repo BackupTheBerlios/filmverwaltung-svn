@@ -2,6 +2,7 @@
 
 <target name="initalisieren" description="Erstellt notwendige Verzeichnisse">
 	<mkdir dir="bin"/>
+	<mkdir dir="test-results"/>
 </target>
 	
 <target name="saeubern" description="Räumt erstmal auf">
