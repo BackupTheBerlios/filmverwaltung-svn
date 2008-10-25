@@ -1,15 +1,34 @@
 <cruisecontrol>
 
-	<project name="Testprojekt" buildafterfailed="true">
-	
-		<modificationset quietperiod="10">
-			<svn LocalWorkingCopy="/tmp/meinsource" RepositoryLocation="svn://svn.berlios.de/filmverwaltung/Testprojekt"/>
-		</modificationset>
-		
-		<schedule interval="1">
-			<ant antworkingdir="." buildfile="build.xml" uselogger="true" usedebug="true" target="all" />
-		</schedule>
-	
-	</project>
+    <project name="Testprojekt" buildafterfailed="true">
 
+        <listeners>
+            <currentbuildstatuslistener file="logs/${project.name}/status.txt"/>
+        </listeners>
+
+        <bootstrappers>
+            <antbootstrapper anthome="apache-ant-1.7.0" buildfile="projects/${project.name}/build.xml" target="all" />
+        </bootstrappers>
+
+        <modificationset quietperiod="30">
+            <!-- touch any file in connectfour project to trigger a build -->
+	    <svn LocalWorkingCopy="projects/${project.name}" RepositoryLocation="svn://svn.berlios.de/filmverwaltung/Testprojekt"/>
+            <!-- filesystem folder="projects/${project.name}"/ -->
+        </modificationset>
+
+        <schedule interval="300">
+            <ant anthome="apache-ant-1.7.0" buildfile="projects/${project.name}/build.xml"/>
+        </schedule>
+
+        <log>
+            <merge dir="projects/${project.name}/test-results"/>
+        </log>
+
+        <publishers>
+            <onsuccess>
+                <artifactspublisher dest="artifacts/${project.name}" file="projects/${project.name}/${project.name}.jar"/>
+            </onsuccess>
+        </publishers>
+
+    </project>
 </cruisecontrol>
