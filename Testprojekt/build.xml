@@ -23,7 +23,7 @@
 			<pathelement location="bin"/>
 		</classpath>
 		<formatter type="xml"/>
-		<batchtest>
+		<batchtest todir="test-results">
 			<fileset dir="bin" includes="**/*Test.class" />
 		</batchtest>
 	</junit>
