@@ -6,8 +6,7 @@
 	
 <target name="saeubern" description="Räumt erstmal auf">
 	<delete dir="bin"/>	
-	<delete dir="docs"/>	
-	<delete file="Testprojekt.jar"/>
+	<delete dir="docs"/>
 </target>
 	
 <target name="kompilieren" depends="initalisieren" description="Kompiliert das Projekt">
