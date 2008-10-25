@@ -20,7 +20,7 @@
 	<junit printsummary="yes" haltonfailure="yes" showoutput="yes">
 		<classpath>
 			<pathelement location="lib/junit.jar" />
-			<pathelement location="bin" />
+			<pathelement location="bin"/>
 		</classpath>
 		<formatter type="xml"/>
 		<batchtest>
