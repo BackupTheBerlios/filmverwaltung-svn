@@ -1,0 +1,76 @@
+body {
+  		font-size:          	medium;
+  		background:				#3e0202;
+		font-family: 			Verdana, Helvetica, Arial, sans-serif;
+	 }
+
+h1, h2 {
+		font-weight:    		normal;
+		font-size:				1,6em;
+		}
+  
+  
+  
+  
+  
+  
+  
+  
+#hauptinhalt {
+  				margin: 		0px 5px 5px 220px;
+  				text-align: 	center;
+				background:		#bd9452;
+				border-style:	solid;
+				border-color:	#ac7171;
+				border-with:	2px;
+ 				}
+#kopfleiste {
+			background-color:					#9e8d73;
+			margin:								10px 0px 10px 0px;
+			height: 							150px;
+			border-style:						solid;
+			border-color:						#7a624d;
+			border-with:						1px;
+			-moz-border-radius:					30px 30px 30px 30px ;
+			-moz-border-radius-topleft: 		30px;
+ 			-moz-border-radius-topright: 		30px;
+ 			-moz-border-radius-bottomleft:		30px;
+ 			-moz-border-radius-bottomright:	 	30px;
+			-khtml-border-radius-topleft: 		30px;
+ 			-khtml-border-radius-topright:		30px;
+ 			-khtml-border-radius-bottomleft:	30px;
+ 			-khtml-border-radius-bottomright:	30px;
+			}
+#kopfleiste img {
+				margin: 0px 40px 0px 40px;
+				}
+
+#navi {
+		float:			left;
+		width:			200px;
+		text-align: 	center;
+		background:		#b9aa8d;
+		border-style:	solid;
+		border-color:	#7a624d;
+		border-with:	2px;
+		}
+
+#navitabelle, #navitabelle td, #navitabelle tr #navitabelle th {
+																table-layout:		fixed;
+																width: 				198px;										
+																border-bottom: 		2px ridge #c0b39a;
+																border-top: 		2px ridge #c0b39a;
+																border-collapse:	collapse;
+																}											
+																
+																
+#menue{
+		border-top-color: #b9aa8d;
+		border-top-style: solid;
+}										
+
+.login{
+		fontsize:large;
+		font-weight:bold;
+}
+																							

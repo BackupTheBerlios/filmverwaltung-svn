@@ -1,17 +1,24 @@
 <?php session_start(); ?>
-
-
-
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="index.css" />
  <title>KF-Monkeys Shop</title>
 </head>
 
 	<body>
+			<p id="kopfleiste" > 
+<img  src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
+</p>
+		<?php
+	//menü
+		include("navigation.php");
+	?>
 	
-	
-	
+	<div id="hauptinhalt">
 		<h1>Anmeldung</h1>
 		
 	
@@ -67,17 +74,13 @@
 		?>
 		
 	
-	<?php
-	//menü
-		include("navigation.php");
-	?>
-	
+
 	
 	 <!-- Loggin-Eingabe -->
 	
 	<form action="Login.php" method="post">
 		<fieldset>
-		<legend>Logindaten eingeben</legend>
+		<legend class="login" > Login-Daten eingeben </legend>
 		<label>Benutzername: <input type="text" name="Benutzername" /></label>
 		<label>Password: <input type="text" name="passwort" /></label>
 		<input type="submit" name="formaction" value="Einloggen" />
@@ -87,7 +90,7 @@
 	
 	
 	
-	
+	</div>
 	</body>
 	
 </html>
