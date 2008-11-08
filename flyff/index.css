@@ -17,16 +17,16 @@ h1, h2 {
   
   
 #hauptinhalt {
-  				margin: 		0px 5px 5px 220px;
+  				margin: 		0px 150px 5px 22%;
   				text-align: 	center;
 				background:		#bd9452;
 				border-style:	solid;
 				border-color:	#ac7171;
-				border-with:	2px;
+				border-width:	2px;
  				}
 #kopfleiste {
 			background-color:					#9e8d73;
-			margin:								10px 0px 10px 0px;
+			margin:								20px 170px 40px 240px;
 			height: 							150px;
 			border-style:						solid;
 			border-color:						#7a624d;
@@ -47,7 +47,7 @@ h1, h2 {
 
 #navi {
 		float:			left;
-		width:			200px;
+		width:			18%;
 		text-align: 	center;
 		background:		#b9aa8d;
 		border-style:	solid;
@@ -57,7 +57,7 @@ h1, h2 {
 
 #navitabelle, #navitabelle td, #navitabelle tr #navitabelle th {
 																table-layout:		fixed;
-																width: 				198px;										
+																width: 				100%;										
 																border-bottom: 		2px ridge #c0b39a;
 																border-top: 		2px ridge #c0b39a;
 																border-collapse:	collapse;
@@ -69,6 +69,23 @@ h1, h2 {
 		border-top-style: solid;
 }										
 
+#angebotabgabe{
+				border: 2px dotted black;
+				padding: 10px;
+				margin: 20px;
+				}
+
+#angebotabgabe th{
+					text-align: right;
+					vertical-align:top;
+					padding-right: 10px;
+					padding-top:2px;
+					font-weight:bold;
+	}
+#angebotabgabe th{
+					vertical-align:top;
+					padding-bottom:15px;
+	}
 .login{
 		fontsize:large;
 		font-weight:bold;
