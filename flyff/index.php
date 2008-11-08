@@ -9,15 +9,13 @@
 <link type="text/css" rel="stylesheet" href="index.css" />
  <title>KF-Monkeys Shop</title>
 </head>
-
+		<p id="kopfleiste" > 
+<img  src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
+</p>
 	<body>
 	<?php
 		include("navigation.php");
 	?>
-	
-		<p id="kopfleiste" > 
-<img  src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
-</p>
 	
 	
 	<div id="hauptinhalt">
