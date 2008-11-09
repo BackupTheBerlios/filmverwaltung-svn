@@ -63,14 +63,29 @@
 	
 	
  <!-- Registrierungs-Eingabe -->
-	
+	<h3 class="login" > Registrier-Daten eingeben </h3>
 	<form action=Registration.php method="post">
 		<fieldset>
-		<legend class="login">Registrier-Daten eingeben</legend>
-		<label>Benutzername: <input type="text" name="Benutzername" /></label>
-		<label>Password: <input type="text" name="passwort" /></label>
-		<input type="submit" name="formaction" value="Einloggen" />
-    	</fieldset>
+		<table>
+					<tr> 
+						<th>Benutzername:</th>
+						<td>
+							 <input type="text" name="Benutzername" />
+						</td>
+					</tr> 
+					<tr>
+						<th>Password: </th>
+						<td>
+						 <input type="text" name="passwort" />
+						 </td> 
+					</tr>
+					<tr>
+						<th> </th>
+						<td>
+							<input type="submit" name="formaction" value="registrieren" />
+					 	</td>
+			</table>
+			</fieldset>
 	</form>
 	
 	</div>

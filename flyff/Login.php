@@ -78,13 +78,30 @@
 	
 	 <!-- Loggin-Eingabe -->
 	
-	<form action="Login.php" method="post">
+	
+		<h3 class="login" > Login-Daten eingeben </h3>
+		<form action="Login.php" method="post">
 		<fieldset>
-		<legend class="login" > Login-Daten eingeben </legend>
-		<label>Benutzername: <input type="text" name="Benutzername" /></label>
-		<label>Password: <input type="text" name="passwort" /></label>
-		<input type="submit" name="formaction" value="Einloggen" />
-    	</fieldset>
+			<table>
+					<tr> 
+						<th>Benutzername:</th>
+						<td>
+							 <input type="text" name="Benutzername" />
+						</td>
+					</tr> 
+					<tr>
+						<th>Password: </th>
+						<td>
+						 <input type="text" name="passwort" />
+						 </td> 
+					</tr>
+					<tr>
+						<th> </th>
+						<td>
+							<input type="submit" name="formaction" value="Einloggen" />
+					 	</td>
+			</table>
+		</fieldset>
 	</form>
 	
 	
