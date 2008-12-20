@@ -10,7 +10,7 @@
  <title>KF-Monkeys Shop</title>
 </head>
 		<p id="kopfleiste" > 
-<img  src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
+<img  id="kopfleiste-bild" src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
 </p>
 	<body>
 	<?php

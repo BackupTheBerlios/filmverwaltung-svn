@@ -11,7 +11,7 @@
 
 	<body>
 			<p id="kopfleiste" > 
-<img  src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
+<img id="kopfleiste-bild" src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
 </p>
 		<?php
 	//menü
@@ -82,7 +82,7 @@
 		<h3 class="login" > Login-Daten eingeben </h3>
 		<form action="Login.php" method="post">
 		<fieldset>
-			<table>
+			<table class="tabelle_login" >
 					<tr> 
 						<th>Benutzername:</th>
 						<td>

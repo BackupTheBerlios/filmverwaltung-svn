@@ -10,7 +10,7 @@
 
 	<body>
 	<p id="kopfleiste" > 
-<img  src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
+<img id="kopfleiste-bild" src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
 </p>
 	
 	<?php
@@ -57,7 +57,7 @@
 			<td> Beschreibung</td>
 			<td><?=$angebot['Beschreibung']?></td>
 		</tr>
-		
+		</table>
 		
 	</div>
 	</body>

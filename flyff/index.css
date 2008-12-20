@@ -27,7 +27,7 @@ h1, h2 {
 #kopfleiste {
 			background-color:					#9e8d73;
 			margin:								20px;
-			height: 							150px;
+			height: 							120px;
 			border-style:						solid;
 			border-color:						#7a624d;
 			border-with:						1px;
@@ -41,9 +41,10 @@ h1, h2 {
  			-khtml-border-radius-bottomleft:	30px;
  			-khtml-border-radius-bottomright:	30px;
 			}
-#kopfleiste img {
+#kopfleiste-bild{			
 				margin: 0px 20px 0px 20px;
 				}
+
 
 #navi {
 		float:			left;
@@ -68,11 +69,15 @@ h1, h2 {
 		border-top-color: #b9aa8d;
 		border-top-style: solid;
 }										
-
+#angebot_uebersicht {
+					margin: auto;
+					text-align: center;
+					}
 #angebotabgabe{
+				text-align: 	center;
 				border: 2px dotted black;
 				padding: 10px;
-				margin: 20px;
+				margin: auto;
 				}
 
 #angebotabgabe th{
@@ -86,6 +91,10 @@ h1, h2 {
 					vertical-align:top;
 					padding-bottom:15px;
 	}
+.tabelle_login{
+				margin: auto;
+				text-align: center;
+				}
 .login{
 		fontsize:large;
 		font-weight:bold;

@@ -9,9 +9,11 @@
 	</head>
 
 	<body>
-		<p id="kopfleiste" > 
-			<img src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />
-		</p>
+		
+		<p id="kopfleiste">
+		 <img id="kopfleiste-bild" src="bilder/kopfleiste.jpg" alt="Logo der Item-Vermittlung Seite" />   
+		</p>				
+		
 		
 			<?php
 				//menü
