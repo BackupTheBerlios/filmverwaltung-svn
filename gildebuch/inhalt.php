@@ -37,7 +37,10 @@
 		// Antwort der Datenbank in $sql_query speichern
 		$query = mysql_query($sql);
 
-		$eintrag = mysql_fetch_array($query)
+		$eintrag = mysql_fetch_array($query);
+		
+		$text = $eintrag['text'];
+		$text = nl2br($text);
 		
 	?>
 	
@@ -45,7 +48,8 @@
 				<p>
 				<h1><?=$eintrag['titel']?></h1>
 			
-				<?=$eintrag['text']?><br>
+			
+				<?=$text?><br>
 
 				</p>
 		</div>
