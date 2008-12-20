@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <meta name="LANGUAGE" content="deutsch,german,DE,AT,CH">
+<link type="text/css" rel="stylesheet" href="eingabe.css" />
  <title>KungFuMonkeys Gildenbuch - Eingabe</title>
 </head>
 <body>
@@ -135,24 +136,10 @@
 				</tr>
 				<tr>
 					<th></th>
-					<td><input type="submit" name="formaction" value="Eintrag einfügen" /></td>
 					<td>Passwort: <input type="password" name="passwort" /></td>
+					<td><input type="submit" name="formaction" value="Eintrag einfügen" /></td>
 				</tr>	
-			<!--		
-	
-					    	<td> <select name="avatar_id" size="4" >
-					    		
-					    			<?php
-										 while ($_char= mysql_fetch_array($char_query)) {
-									?>
-								<option value=<?=$_char['ID']?>><?=$_char['name']?></option>
-									<?php
-										 }
-									?>
-							</select>
-					
-					    -->
-			    	
+					    	
 			    </table>	
 		    	
 			</form>

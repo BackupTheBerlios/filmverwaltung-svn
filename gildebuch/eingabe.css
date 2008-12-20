@@ -1,0 +1,39 @@
+table {
+		border-collapse: collapse;
+		table-layout: auto;
+		padding: 20px 10px 20px 10px;
+	
+		border: 2px solid black;
+	
+	
+	
+}
+td {
+		border-collapse: collapse;
+		table-layout: auto;
+		border: 2px solid black;
+		padding: 20px 10px 20px 10px;
+	
+	
+	
+	
+}
+tr{
+		border-collapse: collapse;
+		table-layout: auto;
+		border: 2px solid black;
+		padding: 20px 10px 20px 10px;
+	
+	
+	
+}
+th{
+		border-collapse: collapse;
+		table-layout: auto;
+		border: 2px solid black;
+	padding: 20px 10px 20px 10px;
+	
+	
+	
+	
+}
