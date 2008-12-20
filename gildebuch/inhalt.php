@@ -37,32 +37,27 @@
 		// Antwort der Datenbank in $sql_query speichern
 		$query = mysql_query($sql);
 
+		$eintrag = mysql_fetch_array($query)
 		
 	?>
 	
 		<div class="rechts">
 				<p>
-
-			<?php
-			 while ($eintrag = mysql_fetch_array($query)) {
-			?>
-			
 				<h1><?=$eintrag['titel']?></h1>
 			
 				<?=$eintrag['text']?><br>
-			
-			<?
-			 }
-			?>
 
 				</p>
 		</div>
 			
 		<div class="links">
-				<p>
-				links / bilder
-				 <img  src="bilder/<?=$bild['bild']?>" alt="Bilder" />   
-				</p>
+		
+		<table id="bild">
+					<tr>
+					<td> <img src="<?=$eintrag['bild']?>" alt="Bilder" />  </td> 
+					</tr>
+		</table>
+				
 		</div>
 	</body>
 	

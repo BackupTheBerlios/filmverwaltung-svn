@@ -1,11 +1,23 @@
 body {
-  		font-size:          	14px;
+  		font-size:          	16px;
   		background: url(bilder/gildebuch-innen.jpg) no-repeat;
   		background-repeat: no-repeat;
-		font-family: 		serif;
+		font-family: 		, "Times New Roman", Times, serif;
+		font-style:         italic;
 		height: 			700px;
 		width:			800px;
+		text-align: center;
 	 }
+h1 {
+		font-size:   25px;
+
+}
+
+h2 {
+		font-size:   20px;
+
+}
+
 .links {
 		height: 		600px;
 		width:			300px;
@@ -37,4 +49,11 @@ a:hover {
 a:link {
 		color: black;
 		text-decoration: none;
+}
+
+#bild {
+		height: 		600px;
+		width:			300px;
+		text-align: center;
+		
 }
