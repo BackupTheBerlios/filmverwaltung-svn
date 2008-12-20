@@ -16,6 +16,11 @@
 	
 	<?php
 		
+		if (!isset($_GET['id']))
+			die ("Ungültiger Aufruf der Seite.");
+		
+		$id = $_GET['id'];
+		
 		$mysqlhost="localhost";    // MySQL-Host angeben
 		$mysqluser="root";    // MySQL-User angeben
 		$mysqlpwd="";		// Passwort angeben
@@ -25,13 +30,29 @@
 		
 		// Auswählen, welche Datenbank verwendet werden soll
 		mysql_select_db($mysqldb, $connection);
-		 $sql=""
+
+		// SQL: Alle Kategorien abfragen
+		$sql="SELECT * FROM `buch` WHERE id = $id ";
+				
+		// Antwort der Datenbank in $sql_query speichern
+		$query = mysql_query($sql);
+
 		
 	?>
 	
 		<div class="rechts">
 				<p>
-				rechts
+
+			<?php
+			 while ($eintrag = mysql_fetch_array($query)) {
+			?>
+			
+				<?=$eintrag['text']?><br>
+			
+			<?
+			 }
+			?>
+
 				</p>
 		</div>
 			
