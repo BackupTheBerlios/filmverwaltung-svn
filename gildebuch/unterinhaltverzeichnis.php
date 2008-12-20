@@ -80,9 +80,12 @@
 		</div>
 		
 		<div class="links">
-			<p>
-			links / bilder
-			</p>
+			<table id="bild">
+					<tr>
+					<td> <img src="bilder/" alt="Bilder" />  </td> <!-- bitte bei src="biler/(hier)" dateiname eingeben-->
+					</tr>
+		</table>
+				
 		</div>
 
 	</body>

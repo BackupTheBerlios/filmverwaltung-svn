@@ -21,7 +21,6 @@ h2 {
 .links {
 		height: 		600px;
 		width:			300px;
-		background:		#bd9452;
 		position: absolute;
 		top:	50px;
 		left: 60px;
@@ -31,8 +30,6 @@ h2 {
 .rechts {
 		height: 		600px;
 		width:			300px;
-		background:		#b9aa8d;
-		
 		position: absolute;
 		top:	50px;
 		left: 440px;
