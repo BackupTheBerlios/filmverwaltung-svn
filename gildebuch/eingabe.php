@@ -22,20 +22,37 @@
 		
 		// Auswählen, welche Datenbank verwendet werden soll
 		mysql_select_db($mysqldb, $connection);
+
+		// Werte umschreiben
+		if ($_POST['kategorie_1'] != "")
+			$kategorie_1	= $_POST['kategorie_1'];
+		else
+			$kategorie_1	= $_POST['kategorie_1_select'];
+			
+			
+			
+			if ($_POST['bild'] != "")
+			$bild			= $_POST['bild'];
+		else
+			$bild			= $_POST['bild_select'];
+			
+			
+			
+			if ($_POST['typ'] != "")
+			$typ			= $_POST['typ'];
+		else
+			$typ			= $_POST['typ_select'];
+
+
+		$titel			= $_POST['titel'];
+		$text			= $_POST['text'];
 		
 		//Verarbeitung der Formular-Eingabe
-		if (isset($_POST['kategorie_1'], $_POST['titel'], $_POST['bild'], $_POST['text'], $_POST['typ'], $_POST['passwort'])) {
+		if (isset($kategorie_1, $titel, $bild, $text, $typ)) {
 		
 			if ($_POST['passwort'] != "hollululu")
 				die("Falsches Passwort!");
 		
-			// Werte umschreiben
-			$kategorie_1	= $_POST['kategorie_1'];
-			$titel			= $_POST['titel'];
-			$bild			= $_POST['bild'];
-			$text			= $_POST['text'];
-			$typ			= $_POST['typ'];
-				
 			// SQL
 			$sql = "INSERT INTO buch (kategorie_1,titel,bild,text,typ) VALUES ( '$kategorie_1', '$titel', '$bild', '$text', '$typ');";
 				
