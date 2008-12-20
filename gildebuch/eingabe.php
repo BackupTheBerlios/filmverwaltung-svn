@@ -24,7 +24,10 @@
 		mysql_select_db($mysqldb, $connection);
 		
 		//Verarbeitung der Formular-Eingabe
-		if (isset($_POST['kategorie_1'], $_POST['titel'], $_POST['bild'], $_POST['text'], $_POST['typ'])) {
+		if (isset($_POST['kategorie_1'], $_POST['titel'], $_POST['bild'], $_POST['text'], $_POST['typ'], $_POST['passwort'])) {
+		
+			if ($_POST['passwort'] != "hollululu")
+				die("Falsches Passwort!");
 		
 			// Werte umschreiben
 			$kategorie_1	= $_POST['kategorie_1'];
@@ -110,6 +113,7 @@
 				<tr>
 					<th></th>
 					<td><input type="submit" name="formaction" value="Eintrag einfügen" /></td>
+					<td>Passwort: <input type="password" name="passwort" /></td>
 				</tr>	
 			<!--		
 	
