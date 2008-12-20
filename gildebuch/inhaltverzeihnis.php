@@ -23,10 +23,26 @@
 		
 		// Auswählen, welche Datenbank verwendet werden soll
 		mysql_select_db($mysqldb, $connection);
-		 $sql="SELECT * FROM `alle_kategorien_1` "
+		
+		// SQL: Alle Kategorien abfragen
+		$sql="SELECT * FROM `alle_kategorien_1` ";
+				
+		// Antwort der Datenbank in $sql_query speichern
+		$query = mysql_query($sql);
 		
 	?>
 		<div class="rechts">
+		
+			<?php
+			 while ($eintrag = mysql_fetch_array($query)) {
+			?>
+
+				<?=$eintrag['kategorie_1']?><br>
+	
+			<?php
+			 }
+			?>
+		
 		
 		</div>
 		
