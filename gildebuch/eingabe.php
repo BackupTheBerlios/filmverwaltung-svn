@@ -35,8 +35,6 @@
 				
 			// SQL
 			$sql = "INSERT INTO buch (kategorie_1,titel,bild,text,typ) VALUES ( '$kategorie_1', '$titel', '$bild', '$text', '$typ');";
-			
-			echo $sql;
 				
 			// Antwort der Datenbank in $sql_query speichern
 			mysql_query($sql);		
