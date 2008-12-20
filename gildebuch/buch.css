@@ -2,7 +2,7 @@ body {
   		font-size:          	18px;
   		background: url(bilder/gildebuch-innen.jpg) no-repeat;
   		background-repeat: no-repeat;
-		font-family: 		, "Times New Roman", Times, serif;
+		font-family: 		 Amaze, "Liberation Serif", "Century Schoolbook L", Georgia, "Times New Roman", Times, serif;
 		font-style:         italic;
 		height: 			700px;
 		width:			800px;
@@ -11,11 +11,15 @@ body {
 	 }
 h1 {
 		font-size:   25px;
+		
 
 }
 
 h2 {
-		font-size:   20px;
+		font-size:   25px;
+		color: #8B0000 
+		
+		
 
 }
 
@@ -50,14 +54,14 @@ a:link {
 }
 
 #bild {
-		height: 		560px;
+		height: 		540px;
 		width:			300px;
 		text-align: center;
 }
 		
 .verlinkung {
 		position: absolute;
-		top:	620px;
+		top:	600px;
 		left: 90px;
 		font-style:         normal;
 }

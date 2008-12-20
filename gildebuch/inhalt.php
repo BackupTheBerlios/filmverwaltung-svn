@@ -67,7 +67,7 @@
 		
 		<div class="verlinkung">
 		<a href="inhaltverzeihnis.php">Oberverzeichnis</a> <br>
-		<a href="unterinhaltverzeichnis.php">Titelübersicht</a>
+		<a href="unterinhaltverzeichnis.php?kategorie=<?=$eintrag['kategorie_1']?>">Titelübersicht</a>
 		</div>
 		
 	
