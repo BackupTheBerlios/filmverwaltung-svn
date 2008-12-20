@@ -32,10 +32,10 @@
 		mysql_select_db($mysqldb, $connection);
 
 		// SQL: Alle Kategorien abfragen
-		$sql="SELECT ID,titel FROM `buch` WHERE kategorie_1 = '$kategorie' ";
-				
+		$typen_sql="SELECT DISTINCT typ FROM `buch` WHERE kategorie_1 = '$kategorie' ";
+
 		// Antwort der Datenbank in $sql_query speichern
-		$query = mysql_query($sql);
+		$typen_query = mysql_query($typen_sql);
 		
 	?>
 	
@@ -43,10 +43,34 @@
 			<p>
 
 			<?php
-			 while ($eintrag = mysql_fetch_array($query)) {
+			 while ($eintrag = mysql_fetch_array($typen_query)) {
 			?>
 
-				<a href="inhalt.php?id=<?=$eintrag['ID']?>"><?=$eintrag['titel']?></a><br>
+				
+
+				<h2><?=$eintrag['typ']?></h2>
+				
+				<?php
+				
+					$typ = $eintrag['typ'];
+				
+					// SQL: Alle Kategorien abfragen
+					$titel_sql="SELECT ID,titel FROM `buch` WHERE kategorie_1 = '$kategorie' AND typ = '$typ' ";				
+					
+					// Antwort der Datenbank in $sql_query speichern
+					$titel_query = mysql_query($titel_sql);
+					
+					while ($titel_eintrag = mysql_fetch_array($titel_query)) {
+					
+					?>
+					
+						<a href="inhalt.php?id=<?=$titel_eintrag['ID']?>"><?=$titel_eintrag['titel']?></a><br>
+					
+					<?php	
+						
+					}
+					
+				?>
 	
 			<?php
 			 }
