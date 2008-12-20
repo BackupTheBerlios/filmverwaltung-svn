@@ -10,13 +10,48 @@
  <title>KungFuMonkeys Gildenbuch - Eingabe</title>
 </head>
 <body>
-	<form action=eingabe.php method="post">
+
+	<?php
+		
+		$mysqlhost="localhost";    // MySQL-Host angeben
+		$mysqluser="root";    // MySQL-User angeben
+		$mysqlpwd="";		// Passwort angeben
+		$mysqldb="gildebuch";    // Gewuenschte Datenbank angeben
+		// Anmeldung am MySQL-Server
+		$connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd);
+		
+		// Auswählen, welche Datenbank verwendet werden soll
+		mysql_select_db($mysqldb, $connection);
+		
+		//Verarbeitung der Formular-Eingabe
+		if (isset($_POST['kategorie_1'], $_POST['titel'], $_POST['bild'], $_POST['text'], $_POST['typ'])) {
+		
+			// Werte umschreiben
+			$kategorie_1	= $_POST['kategorie_1'];
+			$titel			= $_POST['titel'];
+			$bild			= $_POST['bild'];
+			$text			= $_POST['text'];
+			$typ			= $_POST['typ'];
+				
+			// SQL
+			$sql = "INSERT INTO buch (kategorie_1,titel,bild,text,typ) VALUES ( '$kategorie_1', '$titel', '$bild', '$text', '$typ');";
+			
+			echo $sql;
+				
+			// Antwort der Datenbank in $sql_query speichern
+			mysql_query($sql);		
+		}
+		
+	?>
+
+
+	<form action="eingabe.php" method="post">
 			
 		<table>
 				<tr>
 					<th>Bezeichnung der Kategorie</th>
 					<td> <input type="text" name="kategorie_1" />
-						<select name="kategorie_1" size="4" >
+						<select name="kategorie_1_select" size="4" >
 					    		
 					    			<?php
 										 while ($kategorie_1= mysql_fetch_array($kategorie_1_query)) {
@@ -32,7 +67,7 @@
 				</tr>
 				<tr>
 					<th>Name des Titels</th>
-					<td> <input type="text" name="kategorie_2" /> </td>
+					<td> <input type="text" name="titel" /> </td>
 					<td>Den Namen des gedichts oder Rezoetes eintragen</td>
 				</tr>
 				<tr>
@@ -43,7 +78,7 @@
 				<tr>
 					<th>Bild</th>
 					<td> <input type="text" name="bild" /> 
-						<select name="bild" size="4" >
+						<select name="bild_select" size="4" >
 					    		
 					    			<?php
 										 while ($bild= mysql_fetch_array($bild_query)) {
@@ -60,7 +95,7 @@
 				<tr>
 					<th>Typ der Seite</th>
 					<td> <input type="text" name="typ" />
-						<select name="typ" size="4" >
+						<select name="typ_select" size="4" >
 					    		
 					    			<?php
 										 while ($typ= mysql_fetch_array($typ_query)) {
