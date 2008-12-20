@@ -25,7 +25,7 @@
 		mysql_select_db($mysqldb, $connection);
 		
 		// SQL: Alle Kategorien abfragen
-		$sql="SELECT * FROM `alle_kategorien_1` ";
+		$sql="SELECT DISTINCT kategorie_1 FROM buch ";
 				
 		// Antwort der Datenbank in $sql_query speichern
 		$query = mysql_query($sql);
