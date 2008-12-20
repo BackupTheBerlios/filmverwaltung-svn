@@ -37,7 +37,7 @@
 			 while ($eintrag = mysql_fetch_array($query)) {
 			?>
 
-				<?=$eintrag['kategorie_1']?><br>
+				<a href="unterinhaltverzeichnis.php?kategorie=<?=$eintrag['kategorie_1']?>"><?=$eintrag['kategorie_1']?></a><br>
 	
 			<?php
 			 }

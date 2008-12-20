@@ -47,6 +47,8 @@
 			 while ($eintrag = mysql_fetch_array($query)) {
 			?>
 			
+				<h1><?=$eintrag['titel']?></h1>
+			
 				<?=$eintrag['text']?><br>
 			
 			<?
