@@ -43,6 +43,15 @@
 			mysql_query($sql);		
 		}
 		
+		
+			 
+		 $sql_kategorie_1 = "SELECT DISTINCT kategorie_1 FROM buch;";	
+		 $kategorie_1_query=mysql_query($sql_kategorie_1);
+		 $sql_bild = "SELECT DISTINCT bild FROM buch;";	
+	     $bild_query=mysql_query($sql_bild);
+	     $sql_typ = "SELECT DISTINCT typ FROM buch;";	
+		 $typ_query=mysql_query($sql_typ);
+		
 	?>
 
 
@@ -55,10 +64,9 @@
 						<select name="kategorie_1_select" size="4" >
 					    		
 					    			<?php
-										 while ($kategorie_1= mysql_fetch_array($kategorie_1_query)) {
+										 while ($_kategorie_1= mysql_fetch_array($kategorie_1_query)) {
 									?>
-								<option value=?>
-								</option>
+								<option value=<?=$_kategorie_1['kategorie_1']?>><?=$_kategorie_1['kategorie_1']?></option>
 									<?php
 										 }
 									?>
@@ -82,10 +90,9 @@
 						<select name="bild_select" size="4" >
 					    		
 					    			<?php
-										 while ($bild= mysql_fetch_array($bild_query)) {
+										 while ($_bild= mysql_fetch_array($bild_query)) {
 									?>
-								<option value=?>
-								</option>
+								<option value=<?=$_bild['bild']?>><?=$_bild['bild']?></option>
 									<?php
 										 }
 									?>
@@ -101,8 +108,7 @@
 					    			<?php
 										 while ($typ= mysql_fetch_array($typ_query)) {
 									?>
-								<option value=?>
-								</option>
+								<option value=<?=$typ['typ']?>><?=$typ['typ']?></option>
 									<?php
 										 }
 									?>
@@ -120,9 +126,9 @@
 					    	<td> <select name="avatar_id" size="4" >
 					    		
 					    			<?php
-										 while ($char= mysql_fetch_array($char_query)) {
+										 while ($_char= mysql_fetch_array($char_query)) {
 									?>
-								<option value=<?=$char['ID']?>><?=$char['name']?></option>
+								<option value=<?=$_char['ID']?>><?=$_char['name']?></option>
 									<?php
 										 }
 									?>
