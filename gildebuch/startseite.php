@@ -13,8 +13,13 @@
 		
 
 	<body>
-	<p><img src="bilder/">
-	</p>
+	
+		<table id="bild">
+					<tr>
+					<td><a href="inhaltverzeihnis.php"> <img src="bilder/gildebuch-cover"> </a> </td> 
+					</tr>
+		</table>
+
 	</body>
 	
 </html>

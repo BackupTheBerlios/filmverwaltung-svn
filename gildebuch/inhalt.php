@@ -64,6 +64,12 @@
 				
 		</div>
 		
+		
+		<div class="verlinkung">
+		<a href="inhaltverzeihnis.php">Oberverzeichnis</a> <br>
+		<a href="unterinhaltverzeichnis.php">Titelübersicht</a>
+		</div>
+		
 	
 	</body>
 	

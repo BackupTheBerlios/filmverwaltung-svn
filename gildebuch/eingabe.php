@@ -90,7 +90,8 @@
 									?>
 						</select>
 					</td>
-					<td>Bsp. Weihnachten 2008 oder Rezepte. Entweder ein alte Bezeichnung auswählen oder eine neue fstlegen</td>
+					<td>Bsp. Weihnachten 2008 oder Rezepte. Entweder ein alte Bezeichnung auswählen oder eine neue festlegen. <br>
+						Bitte nur maximal 30 Zeilen pro Seite</td>
 				</tr>
 				<tr>
 					<th>Name des Titels</th>

@@ -80,13 +80,18 @@
 		</div>
 		
 		<div class="links">
-			<table id="bild">
+		<!-- <table id="bild">
 					<tr>
-					<td> <img src="bilder/" alt="Bilder" />  </td> <!-- bitte bei src="biler/(hier)" dateiname eingeben-->
+					<td> <img src="bilder/" alt="Bilder" />  </td> 
 					</tr>
 		</table>
-				
+		-->
 		</div>
+		
+		<div class="verlinkung">
+		<a href="inhaltverzeihnis.php">Oberverzeichnis</a> <br>
+		</div>
+		
 
 	</body>
 	

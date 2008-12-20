@@ -1,5 +1,5 @@
 body {
-  		font-size:          	16px;
+  		font-size:          	18px;
   		background: url(bilder/gildebuch-innen.jpg) no-repeat;
   		background-repeat: no-repeat;
 		font-family: 		, "Times New Roman", Times, serif;
@@ -7,6 +7,7 @@ body {
 		height: 			700px;
 		width:			800px;
 		text-align: center;
+		vertical-align: center;
 	 }
 h1 {
 		font-size:   25px;
@@ -49,8 +50,15 @@ a:link {
 }
 
 #bild {
-		height: 		600px;
+		height: 		560px;
 		width:			300px;
 		text-align: center;
-		
 }
+		
+.verlinkung {
+		position: absolute;
+		top:	620px;
+		left: 90px;
+		font-style:         normal;
+}
+		
