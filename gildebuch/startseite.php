@@ -5,9 +5,10 @@
 
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link type="text/css" rel="stylesheet" href="index.css" />
- <title>KungFuMonkeys Gildenbuch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="LANGUAGE" content="deutsch,german,DE,AT,CH">
+<link type="text/css" rel="stylesheet" href="startseite.css" />
+ <title>KungFuMonkeys Gildenbuch - Startseite</title>
 </head>
 		
 

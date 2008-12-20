@@ -5,13 +5,29 @@
 
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link type="text/css" rel="stylesheet" href="index.css" />
- <title>KungFuMonkeys Gildenbuch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="LANGUAGE" content="deutsch,german,DE,AT,CH">
+<link type="text/css" rel="stylesheet" href="buch.css" />
+ <title>KungFuMonkeys Gildenbuch - Unterinhlatsverzeichnis</title>
 </head>
 		
 
 	<body>
+	
+	<?php
+		
+		$mysqlhost="localhost";    // MySQL-Host angeben
+		$mysqluser="root";    // MySQL-User angeben
+		$mysqlpwd="";		// Passwort angeben
+		$mysqldb="gildebuch";    // Gewuenschte Datenbank angeben
+		// Anmeldung am MySQL-Server
+		$connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd);
+		
+		// Auswählen, welche Datenbank verwendet werden soll
+		mysql_select_db($mysqldb, $connection);
+		 $sql=""
+		
+	?>
 	
 		<div class="rechts">
 			<p>
@@ -21,7 +37,7 @@
 		
 		<div class="links">
 			<p>
-			links
+			links / bilder
 			</p>
 		</div>
 

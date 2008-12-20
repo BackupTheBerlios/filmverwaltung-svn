@@ -5,9 +5,10 @@
 
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta name="LANGUAGE" content="deutsch,german,DE,AT,CH">
 		<link type="text/css" rel="stylesheet" href="buch.css" />
-		 <title>KungFuMonkeys Gildenbuch</title>
+		 <title>KungFuMonkeys Gildenbuch - Inhaltsverzeichnis</title>
 	</head>
 	<body>
 	
@@ -26,12 +27,12 @@
 		
 	?>
 		<div class="rechts">
-		<?php echo("$sql");?>
+		
 		</div>
 		
 		<div class="links">
 			<p>
-			links
+			links / bilder
 			</p>
 		</div>
 	
