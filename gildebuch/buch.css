@@ -1,0 +1,28 @@
+body {
+  		font-size:          	14px;
+  		background: url(bilder/gildebuch-innen.jpg) no-repeat;
+  		background-repeat: no-repeat;
+		font-family: 		serif;
+		height: 			700px;
+		width:			800px;
+	 }
+.links {
+		height: 		600px;
+		width:			300px;
+		background:		#bd9452;
+		position: absolute;
+		top:	50px;
+		left: 60px;
+		
+	
+		}
+.rechts {
+		height: 		600px;
+		width:			300px;
+		background:		#b9aa8d;
+		
+		position: absolute;
+		top:	50px;
+		left: 440px;
+}
+
